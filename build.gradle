@@ -13,6 +13,7 @@ dependencies {
     // JavaEE API (Servlet API)
     //providedCompile'javax.servlet:javax.servlet-api:4.0.1'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation 'javax.servlet:jstl:1.2'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
