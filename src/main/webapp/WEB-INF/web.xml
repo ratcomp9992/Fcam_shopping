@@ -5,6 +5,15 @@
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
   version="4.0">
+<!--    @WebServlet("/hello") 대신 매핑 시켜주기
+    <servlet>
+        <servlet-name>HelloServletController</servlet-name>
+        <servlet-class>com.example.controller.HelloServletController</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>HelloServletController</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+-->
 </web-app>
