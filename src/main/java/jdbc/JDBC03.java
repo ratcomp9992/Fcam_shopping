@@ -6,7 +6,7 @@ import com.example.entity.BookDTO;
 public class JDBC03 {
     public static void main(String[] args) {
         int num = 1;
-        BookDTO dto = new BookDTO(num, title, price, name, page);
+        BookDTO dto = new BookDTO();
         dto.setNum(num);
         BookDAO dao = new BookDAO();
         dao.bookDelete(dto);

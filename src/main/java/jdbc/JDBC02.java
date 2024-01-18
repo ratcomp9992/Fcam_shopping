@@ -9,7 +9,7 @@ public class JDBC02 {
         int price = 54000;
         int page = 390;
 
-        BookDTO dto = new BookDTO(num, title, price, name, page);
+        BookDTO dto = new BookDTO();
         dto.setNum(num);
         dto.setPrice(price);
         dto.setPage(page);
