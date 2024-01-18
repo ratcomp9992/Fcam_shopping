@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.entity.BoardDTO;
 import com.example.entity.BookDTO;
 import com.example.repository.BookDAO;
+import com.example.repository.BookMyBatisDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,8 +34,10 @@ public class BookListController extends HttpServlet {
         list.add(new BoardDTO(2, "게시판 연습2", "게시판 연습2", "관리자2", new Date(), 1));
         list.add(new BoardDTO(3, "게시판 연습3", "게시판 연습3", "관리자3", new Date(), 2));
 */
+       // BookDAO dao = new BookDAO();
+
         // DB에서 데이터를 꺼내옴
-        BookDAO dao = new BookDAO();
+        BookMyBatisDAO dao = new BookMyBatisDAO();
         List<BookDTO> list = dao.bookList();
 
         // 특정 메모리에 꺼내온 DB 데이터 객체를 바인딩 하기(속성을 추가)

@@ -86,8 +86,7 @@ public class BookDAO {
     }
 
     public int bookInsert(BookDTO book) {
-        String SQL = "insert into booktbl(title, price, name, page) " +
-                "values ('?', '?', '?', '?')";
+        String SQL = "insert into booktbl(title, price, name, page) values (?, ?, ?, ?)";
 
         conn = getConnect();
         int cnt = -1;

@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.entity.BookDTO;
 import com.example.repository.BookDAO;
+import com.example.repository.BookMyBatisDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +31,8 @@ public class BookRegisterPostController extends HttpServlet {
         dto.setName(name);
         dto.setPage(page);
 
-        BookDAO dao = new BookDAO();
+        //BookDAO dao = new BookDAO();
+        BookMyBatisDAO dao = new BookMyBatisDAO();
         dao.bookInsert(dto);
 
         // 저장 후에 다시 List 보기로 이동 해야 한다.
