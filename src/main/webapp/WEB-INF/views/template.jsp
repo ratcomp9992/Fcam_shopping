@@ -13,12 +13,12 @@
 <body>
 
     <div class="container">
-    <h2>Card Header and Footer</h2>
-    <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div>
-    <div class="card-footer">Footer</div>
-    </div>
+        <h2>MVC Framework</h2>
+        <div class="card">
+            <div class="card-header">Header</div>
+            <div class="card-body">Content</div>
+            <div class="card-footer">FastCampus_BE7_나도윤</div>
+        </div>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

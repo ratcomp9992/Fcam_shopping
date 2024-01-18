@@ -1,4 +1,6 @@
-package com.example.entity;
+package com.example.repository;
+
+import com.example.entity.BookDTO;
 
 import java.sql.*;
 import java.util.ArrayList;

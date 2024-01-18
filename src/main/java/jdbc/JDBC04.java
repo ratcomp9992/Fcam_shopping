@@ -1,6 +1,6 @@
 package jdbc;
 
-import com.example.entity.BookDAO;
+import com.example.repository.BookDAO;
 import com.example.entity.BookDTO;
 
 import java.util.List;

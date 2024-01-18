@@ -15,30 +15,31 @@
     <div class="container">
         <h2>MVC Framework</h2>
         <div class="card">
-            <div class="card-header">Board List</div>
+            <div class="card-header">Book List</div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
                     <thead class="thead thead-dark">
                         <tr>
                             <th>번호</th>
                             <th>제목</th>
-                            <th>작성자</th>
-                            <th>작성일</th>
-                            <th>조회수</th>
+                            <th>가격</th>
+                            <th>저자</th>
+                            <th>페이지</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="board" items="${list}">
+                        <c:forEach var="book" items="${list}">
                             <tr>
-                                <td>${board.num}</td>
-                                <td>${board.title}</td>
-                                <td>${board.writer}</td>
-                                <td>${board.indate}</td>
-                                <td>${board.count}</td>
+                                <td>${book.num}</td>
+                                <td>${book.title}</td>
+                                <td>${book.price}</td>
+                                <td>${book.name}</td>
+                                <td>${book.page}</td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
+                <button class="btn btn-primary btn-sm" onclick="location.href='/shopping/register'">책등록</button>
             </div>
             <div class="card-footer">FastCampus_BE7_나도윤</div>
         </div>
