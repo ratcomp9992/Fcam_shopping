@@ -1,25 +1,17 @@
 package com.example.controller;
 
-import com.example.entity.BoardDTO;
 import com.example.entity.BookDTO;
-import com.example.repository.BookDAO;
 import com.example.repository.BookMyBatisDAO;
 import com.google.gson.Gson;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-//@WebServlet("/list")
-public class BookListController implements Controller {
+public class BookAjaxListController  implements Controller  {   // JSON을 응답하는 Controller : RestController
     public String requestHandler (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // DB에서 데이터를 꺼내옴
         BookMyBatisDAO dao = new BookMyBatisDAO();
@@ -29,7 +21,7 @@ public class BookListController implements Controller {
         req.setAttribute("list", list);     // "list"라는 이름에 실제 데이터가 위치한 번지가 저장이 된다.
 
         // View가 없어서 jsp파일의 경로 대신 Json 데이터를 전달하고자 한다.
-        /*
+
         Gson gson = new Gson();
         String json = gson.toJson(list);
         resp.setContentType("text/json;charset=UTF-8");
@@ -38,8 +30,5 @@ public class BookListController implements Controller {
         out.println(json);
 
         return null;
-
-         */
-        return "list";
     }
 }
