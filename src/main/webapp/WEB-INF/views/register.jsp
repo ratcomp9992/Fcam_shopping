@@ -17,7 +17,7 @@
         <div class="card">
             <div class="card-header">Book Register(책 등록)</div>
             <div class="card-body">
-                <form action="/shopping/registerPost" method="post">
+                <form action="/shopping/registerPost.do" method="post">
                     <div class="form-group">
                         <label for="title">제목</label>
                         <input type="text" class="form-control" placeholder="Enter title" id="title" name="title">

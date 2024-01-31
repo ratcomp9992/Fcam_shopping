@@ -39,7 +39,7 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                <button class="btn btn-primary btn-sm" onclick="location.href='/shopping/register'">책등록</button>
+                <button class="btn btn-primary btn-sm" onclick="location.href='/shopping/register.do'">책등록</button>
             </div>
             <div class="card-footer">FastCampus_BE7_나도윤</div>
         </div>

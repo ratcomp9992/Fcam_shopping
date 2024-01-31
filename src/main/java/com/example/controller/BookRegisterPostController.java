@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/registerPost")
-public class BookRegisterPostController extends HttpServlet {
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+public class BookRegisterPostController implements Controller{
+
+    public String requestHandler (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
@@ -37,7 +36,8 @@ public class BookRegisterPostController extends HttpServlet {
 
         // 저장 후에 다시 List 보기로 이동 해야 한다.
         // redirect : controller -> controller
-        resp.sendRedirect("list");  // http://localhost:8081/shopping/list
+        // resp.sendRedirect("list");  // http://localhost:8081/shopping/list
 
+        return "redirect:list.do";
     }
 }
