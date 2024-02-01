@@ -55,7 +55,7 @@
 
     function goDel(num){
          // 삭제요청, URL돌려서요청, ajax요청
-         location.href="/shopping/delete.do?num="+num; // GET방식 요청
+         location.href="/shopping/delete/"+num; // GET방식 요청
     }
 </script>
 </head>
@@ -66,7 +66,7 @@
         <div class="card">
             <div class="card-header">
             <c:if test="${empty uservo}">
-            <form class="form-inline" action="/shopping/login.do" method="post">
+            <form class="form-inline" action="/shopping/login" method="post">
               <label for="text">ID :</label>
               <input type="text" class="form-control" placeholder="Enter ID" id="username" name="username">
               <label for="pwd">Password:</label>
@@ -80,7 +80,7 @@
                         Welcome, ${uservo.userid} 님 환영 합니다.
                     </div>
                     <div class="col-4 text-left">
-                        <form class="form-inline" action="/shopping/logout.do" method="post">
+                        <form class="form-inline" action="/shopping/logout" method="post">
                             <button type="submit" class="btn btn-primary btn-sm">로그아웃</button>
                         </form>
                     </div>
@@ -107,14 +107,14 @@
                                 <td>${book.price}</td>
                                 <td>${book.name}</td>
                                 <td>${book.page}</td>
-                                <c:if test="${!empty uservo}">
+
                                     <td><button type="button" class="btn btn-sm btn-danger" onclick="goDel(${book.num})">삭제</button></td>
-                                </c:if>
+
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
-                <button class="btn btn-primary btn-sm" onclick="location.href='/shopping/register.do'">책등록</button>
+                <button class="btn btn-primary btn-sm" onclick="location.href='/shopping/register'">책등록</button>
                 <button class="btn btn-primary btn-sm" onclick="goList()">BookList</button>
             </div>
             <div id = "list" class="container" style="display:none">
