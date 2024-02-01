@@ -1,11 +1,6 @@
 package com.example.frontcontroller;
 
-import com.example.controller.BookListController;
-import com.example.controller.BookRegisterController;
-import com.example.controller.BookRegisterPostController;
-import com.example.controller.Controller;
-import com.example.entity.BookDTO;
-import com.example.repository.BookMyBatisDAO;
+import com.example.action.Controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,10 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("*.do")
-public class BookController extends HttpServlet {
+public class BookFrontController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // FrontController

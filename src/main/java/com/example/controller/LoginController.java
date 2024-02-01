@@ -1,19 +1,15 @@
 package com.example.controller;
 
-import com.example.entity.BookDTO;
+import com.example.action.Controller;
 import com.example.entity.UserDTO;
-import com.example.repository.BookMyBatisDAO;
-import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
-public class LoginController implements Controller  {   // JSON을 응답하는 Controller : RestController
+public class LoginController implements Controller {   // JSON을 응답하는 Controller : RestController
     public String requestHandler (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        // 회원 인증처리
 

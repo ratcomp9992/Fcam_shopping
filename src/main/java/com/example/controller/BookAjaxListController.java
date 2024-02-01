@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.action.Controller;
 import com.example.entity.BookDTO;
 import com.example.repository.BookMyBatisDAO;
 import com.google.gson.Gson;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class BookAjaxListController  implements Controller  {   // JSON을 응답하는 Controller : RestController
+public class BookAjaxListController  implements Controller {   // JSON을 응답하는 Controller : RestController
     public String requestHandler (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // DB에서 데이터를 꺼내옴
         BookMyBatisDAO dao = new BookMyBatisDAO();

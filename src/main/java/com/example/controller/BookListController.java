@@ -1,21 +1,13 @@
 package com.example.controller;
 
-import com.example.entity.BoardDTO;
+import com.example.action.Controller;
 import com.example.entity.BookDTO;
-import com.example.repository.BookDAO;
 import com.example.repository.BookMyBatisDAO;
-import com.google.gson.Gson;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 //@WebServlet("/list")
