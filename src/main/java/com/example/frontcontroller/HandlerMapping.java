@@ -20,6 +20,8 @@ public class HandlerMapping {
         mapping.put("/registerPost.do", new BookRegisterPostController());
         mapping.put("/ajaxList.do", new BookAjaxListController());
         mapping.put("/login.do", new LoginController());
+        mapping.put("/logout.do", new LogoutController());
+        mapping.put("/delete.do", new BookDeleteController());
     }
 
     public Controller getController (String key) {

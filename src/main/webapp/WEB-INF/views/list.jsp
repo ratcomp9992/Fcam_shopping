@@ -52,6 +52,11 @@
             $("#list").css("display","none");
         }
     }
+
+    function goDel(num){
+         // 삭제요청, URL돌려서요청, ajax요청
+         location.href="/shopping/delete.do?num="+num; // GET방식 요청
+    }
 </script>
 </head>
 <body>
@@ -60,13 +65,27 @@
         <h2>MVC Framework</h2>
         <div class="card">
             <div class="card-header">
+            <c:if test="${empty uservo}">
             <form class="form-inline" action="/shopping/login.do" method="post">
               <label for="text">ID :</label>
-              <input type="email" class="form-control" placeholder="Enter ID" id="username" name="username">
+              <input type="text" class="form-control" placeholder="Enter ID" id="username" name="username">
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
               <button type="submit" class="btn btn-primary">Login</button>
             </form>
+            </c:if>
+            <c:if test="${!empty uservo}">
+                <div class="row">
+                    <div class="col-8 text-right">
+                        Welcome, ${uservo.userid} 님 환영 합니다.
+                    </div>
+                    <div class="col-4 text-left">
+                        <form class="form-inline" action="/shopping/logout.do" method="post">
+                            <button type="submit" class="btn btn-primary btn-sm">로그아웃</button>
+                        </form>
+                    </div>
+                </div>
+            </c:if>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -77,6 +96,7 @@
                             <th>가격</th>
                             <th>저자</th>
                             <th>페이지</th>
+                            <th>삭제</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,6 +107,9 @@
                                 <td>${book.price}</td>
                                 <td>${book.name}</td>
                                 <td>${book.page}</td>
+                                <c:if test="${!empty uservo}">
+                                    <td><button type="button" class="btn btn-sm btn-danger" onclick="goDel(${book.num})">삭제</button></td>
+                                </c:if>
                             </tr>
                         </c:forEach>
                     </tbody>

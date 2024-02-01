@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.entity.BookDTO;
+import com.example.entity.UserDTO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -46,4 +47,27 @@ public class BookMyBatisDAO {
         session.close();
         return cnt;
     }
+
+    // DELETE
+    public int bookDelete(int num) {
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int cnt = session.delete("bookDelete", num);
+
+        session.commit();
+        session.close();
+        return cnt;
+    }
+
+    public UserDTO userLogin(UserDTO dto) {
+        SqlSession session = sqlSessionFactory.openSession();
+
+        // Mapper.xml에서 id와 resultType을 확인하고 SQL 쿼리문을 날려준다.
+        UserDTO user = session.selectOne("userLogin", dto);
+
+        session.close();
+        return user;
+    }
+
+
 }

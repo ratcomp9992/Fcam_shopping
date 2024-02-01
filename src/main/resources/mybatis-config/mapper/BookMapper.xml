@@ -16,6 +16,20 @@
         insert into booktbl(title, price, name, page)
         values(#{title}, #{price}, #{name}, #{page})
     </insert>
+
+    <delete id="bookDelete" parameterType="int">
+        delete
+        from booktbl
+        where num=#{num}
+    </delete>
+
+    <!--
+    <select id="userLogin" resultType="com.example.entity.UserDTO" parameterType="com.example.entity.UserDTO">
+        select *
+        from usertbl
+        where username=#{username} and password=#{password}
+    </select>
+    -->
 </mapper>
 
 
